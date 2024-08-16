@@ -1,9 +1,14 @@
-# provider.tf
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
 
-# Specify the provider and access details
+# Configure the AWS Provider
 provider "aws" {
-  shared_credentials_file = "$HOME/.aws/credentials"
-  profile                 = "default"
-  region                  = var.aws_region
+  region = "us-east-1"     #change region as per you requirement
 }
 
